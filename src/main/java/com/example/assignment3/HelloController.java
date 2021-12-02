@@ -12,9 +12,6 @@ import javafx.stage.Window;
 public class HelloController {
 
     @FXML
-    private TextField nameField;
-
-    @FXML
     private TextField emailField;
 
     @FXML
@@ -28,7 +25,7 @@ public class HelloController {
 
 
     @FXML
-    protected void onHelloButtonClick() {
+    protected void handleSubmitButtonAction() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 }
