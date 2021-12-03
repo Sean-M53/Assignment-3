@@ -8,8 +8,7 @@ public class SecurityCheck {
     }
 
     public static void main(String[] args) {
-        String email1 = "seam50@gmail.com";
-        System.out.println(checkEmail(email1));
+
 
     }
 }
