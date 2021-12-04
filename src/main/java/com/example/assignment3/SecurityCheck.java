@@ -8,6 +8,16 @@ public class SecurityCheck {
     }
 
     public static boolean checkPassword(String password){
+        int letterCount = 0;
+        int numCount = 0;
+        int specialCount = 0;
+
+        if (password.length() >= 7){
+            if (password.matches(".*[a-z].*") == true || password.matches(".*[A-Z].*") == true){
+                return true;
+            }
+        }
+
         return false;
     }
 
