@@ -12,6 +12,9 @@ public class SecurityCheck {
     }
 
     public static boolean checkPassword(String password){
+        if (password == null){
+            return false;
+        }
         int letter = 0;
         int special = 0;
 
