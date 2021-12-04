@@ -7,6 +7,10 @@ public class SecurityCheck {
         return email.matches(regex);
     }
 
+    public static boolean checkPassword(String password){
+        return false;
+    }
+
     public static void main(String[] args) {
 
 
