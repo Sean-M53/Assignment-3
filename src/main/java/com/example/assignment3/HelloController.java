@@ -25,7 +25,32 @@ public class HelloController {
 
 
     @FXML
-    protected void handleSubmitButtonAction() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void handleSubmitButtonAction(ActionEvent event) {
+        Window owner = submitButton.getScene().getWindow();
+
+        if(emailField.getText().isEmpty()) {
+            makeAlert.alertMaker(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter your Email");
+            return;
+        }
+        if(passwordField.getText().isEmpty()) {
+            makeAlert.alertMaker(Alert.AlertType.ERROR, owner, "Form Error!", "Please enter your Password");
+            return;
+        }
+
+        String emailData = emailField.getText();
+        String passwordData = passwordField.getText();
+
+        if( SecurityCheck.checkEmail(emailData) == false) {
+            makeAlert.alertMaker(Alert.AlertType.ERROR, owner, "Form Error!", "Invalid Email");
+            return;
+        }
+        if( SecurityCheck.checkPassword(passwordData) == false) {
+            makeAlert.alertMaker(Alert.AlertType.ERROR, owner, "Form Error!", "Invalid Password");
+            return;
+        }
+
+        makeAlert.alertMaker(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
+                "Welcome ");
+
     }
 }
